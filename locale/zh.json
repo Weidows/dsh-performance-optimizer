@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "性能优化器",
+    "description": "采集宿主进程与子模块的 CPU / 内存 / IO 指标,并通过 设置 → 插件 详情页、可选悬浮窗和 MCP 服务暴露数据。"
+  },
+  "title": "性能优化器",
+  "panelTitle": "性能优化器",
+  "hudLabel": "性能悬浮窗",
+  "sections": {
+    "host": "宿主进程",
+    "history": "采样历史"
+  },
+  "metrics": {
+    "rssMB": "常驻内存",
+    "heapMB": "堆使用",
+    "heapTotalMB": "堆总大小",
+    "cpuUserMs": "CPU 用户态",
+    "cpuSystemMs": "CPU 系统态",
+    "cpuDeltaMs": "CPU 增量",
+    "wallDeltaMs": "采样间隔耗时",
+    "uptime": "运行时长",
+    "intervalMs": "采样间隔"
+  },
+  "actions": {
+    "refreshNow": "立即采样",
+    "resetHistory": "重置历史",
+    "copyReport": "复制报告",
+    "openProfilerTip": "提示:滚动卡顿时,可从此面板启动渲染端 profile。"
+  },
+  "tool": {
+    "title": "性能优化器 — 宿主报告",
+    "description": "返回宿主最新的一次性能快照:常驻内存、堆、CPU(用户/系统)、采样数与近 10 次历史。可用于排查滚动卡顿、内存漂移或工具调用风暴。"
+  },
+  "mcp": {
+    "snapshot": "返回宿主最新一次性能采样(rss / heap / cpu / uptime)。开销极小。",
+    "history": "返回最近 N 次采样(默认 10,最多 60),便于查看趋势。",
+    "reset": "重置宿主滚动历史。返回确认信息。"
+  }
+}

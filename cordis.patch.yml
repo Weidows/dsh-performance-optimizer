@@ -1,0 +1,23 @@
+# Performance Optimizer — loader patch.
+#
+# Single insert: the performance-optimizer bundle. It owns the Host sampler,
+# the Settings tab client, and the native performance_report tool. No MCP
+# server lives in this bundle — see index.js for the rationale and the
+# public ctx.performanceOptimizer service that a sibling MCP plugin could
+# re-export if desired.
+#
+# This patch only inserts; it never overrides existing rows, so it composes
+# cleanly with any user-side patch layer.
+
+- insert:
+    - id: performance-optimizer
+      name: '@local/dsh-performance-optimizer'
+      config:
+        # Sampling interval in milliseconds (Host-side timer).
+        sampleIntervalMs: 1000
+        # Rolling buffer length.
+        historySize: 60
+        # Floating HUD visibility on boot (right-bottom overlay).
+        hudVisible: false
+        # Mount the Settings → Plugins → per-plugin detail tab.
+        settingsTab: true

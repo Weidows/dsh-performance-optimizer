@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Performance Optimizer",
+    "description": "Collects per-event and host-wide CPU / memory / IO metrics and exposes them via the Settings → Plugins detail page, an optional HUD, and an MCP server."
+  },
+  "title": "Performance Optimizer",
+  "panelTitle": "Performance Optimizer",
+  "hudLabel": "Performance HUD",
+  "sections": {
+    "host": "Host process",
+    "history": "Sample history"
+  },
+  "metrics": {
+    "rssMB": "RSS",
+    "heapMB": "Heap used",
+    "heapTotalMB": "Heap total",
+    "cpuUserMs": "CPU user",
+    "cpuSystemMs": "CPU system",
+    "cpuDeltaMs": "CPU delta",
+    "wallDeltaMs": "Wall delta",
+    "uptime": "Uptime",
+    "intervalMs": "Sample interval"
+  },
+  "actions": {
+    "refreshNow": "Sample now",
+    "resetHistory": "Reset history",
+    "copyReport": "Copy report",
+    "openProfilerTip": "Tip: capture a renderer profile from this panel when scroll lag spikes."
+  },
+  "tool": {
+    "title": "Performance Optimizer — host report",
+    "description": "Return a fresh performance snapshot from the running Host: rss, heap, cpu (user/system), sample count, last-10 history. Use when investigating scroll lag, memory drift, or tool-loop storms."
+  },
+  "mcp": {
+    "snapshot": "Return the most recent host performance sample (rss / heap / cpu / uptime). Lightweight.",
+    "history": "Return the last N samples (default 10, max 60) so you can see trend over time.",
+    "reset": "Reset the rolling history on the Host. Returns confirmation."
+  }
+}
