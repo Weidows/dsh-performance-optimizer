@@ -11,7 +11,7 @@
 
 - insert:
     - id: performance-optimizer
-      name: '@local/dsh-performance-optimizer'
+      name: dsh-performance-optimizer
       config:
         # Sampling interval in milliseconds (Host-side timer).
         sampleIntervalMs: 1000

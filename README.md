@@ -1,5 +1,7 @@
 # dsh-performance-optimizer
 
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/weidows/dsh-performance-optimizer)
+
 DSH bundle that exposes **host-wide and per-event-loop performance metrics** so the user (via a Settings tab) and the agent (via a native tool and a stdio MCP server) can reason about scroll lag, memory drift, and tool loops.
 
 The bundle is intentionally minimal — it samples Node `process.memoryUsage()` / `process.cpuUsage()` once per second, keeps a 60-sample rolling buffer, and exposes it through three surfaces:
@@ -24,14 +26,14 @@ The bundle is intentionally minimal — it samples Node `process.memoryUsage()` 
 ## Install
 
 ```bash
-# from a clone
+# from npm
+npx @deepseek-ai/dsh plugin --profile web add dsh-performance-optimizer
+
+# from source
+npx @deepseek-ai/dsh plugin --profile web add github:Weidows/dsh-performance-optimizer
+
+# from a local clone
 npx @deepseek-ai/dsh plugin --profile web add /absolute/path/to/dsh-performance-optimizer
-
-# from a tarball
-npx @deepseek-ai/dsh plugin --profile web add ./dsh-performance-optimizer-0.1.0.tgz
-
-# from npm (once published)
-npx @deepseek-ai/dsh plugin --profile web add @local/dsh-performance-optimizer
 ```
 
 Restart the Web profile and open <http://127.0.0.1:3080/settings/plugins>.
@@ -43,7 +45,7 @@ npx @deepseek-ai/dsh web
 To remove:
 
 ```bash
-npx @deepseek-ai/dsh plugin --profile web remove @local/dsh-performance-optimizer
+npx @deepseek-ai/dsh plugin --profile web remove dsh-performance-optimizer
 ```
 
 ## What it measures

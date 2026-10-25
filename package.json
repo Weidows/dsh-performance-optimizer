@@ -1,11 +1,12 @@
 {
-  "name": "@local/dsh-performance-optimizer",
+  "name": "dsh-performance-optimizer",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "DSH bundle that exposes host-wide and per-event-loop performance metrics (CPU / memory / IO / chat DOM) via a Settings tab, an optional HUD, an in-process MCP server, and a native agent tool.",
   "keywords": [
+    "dsh",
     "dsh-plugin",
+    "deepseek-harness",
     "performance",
     "diagnostics"
   ],
@@ -24,6 +25,15 @@
     "README.md",
     "LICENSE"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weidows/dsh-performance-optimizer.git"
+  },
+  "homepage": "https://dsh-plugin.org/plugins/weidows/dsh-performance-optimizer",
+  "bugs": {
+    "url": "https://github.com/Weidows/dsh-performance-optimizer/issues"
+  },
   "dsh": {
     "bundle": { "patch": "./cordis.patch.yml" },
     "client": {
